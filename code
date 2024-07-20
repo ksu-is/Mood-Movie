@@ -1,6 +1,3 @@
-import random
-
-# Dictionary mapping emotions to movie genres
 emotion_to_genre = {
     "happy": ["Comedy", "Adventure", "Family"],
     "sad": ["Drama", "Romance"],
@@ -11,7 +8,6 @@ emotion_to_genre = {
     "angry": ["Action", "Thriller", "Horror"]
 }
 
-# Dictionary mapping genres to movies
 genre_to_movies = {
     "Comedy": ["Superbad", "Step Brothers", "The Hangover"],
     "Adventure": ["Indiana Jones", "Jumanji", "Jurassic Park"],
@@ -51,21 +47,6 @@ def suggest_movie(emotion):
     return f"Since you're feeling {emotion}, how about watching '{movie}' from the {genre} genre?"
 import random
 
-# Dictionary mapping emotions to movie genres
-emotion_to_genre = {
-    "happy": ["Comedy", "Adventure", "Family"],
-    "sad": ["Drama", "Romance"],
-    "excited": ["Action", "Thriller"],
-    "bored": ["Mystery", "Sci-Fi", "Fantasy"],
-    "stressed": ["Animation", "Comedy"],
-    "relaxed": ["Romantic Comedy", "Documentary"],
-    "angry": ["Action", "Thriller", "Horror"],
-    "nostalgic": ["Classic", "Family"],
-    "hopeful": ["Drama", "Biography"],
-    "scared": ["Horror", "Thriller"]
-}
-
-# Dictionary mapping genres to detailed movie suggestions
 genre_to_movies = {
     "Comedy": [
         {"title": "Superbad", "description": "Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.", "year": 2007},
