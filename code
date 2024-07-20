@@ -1,0 +1,42 @@
+emotion_to_genre = {
+    "happy": ["Comedy", "Adventure", "Family"],
+    "sad": ["Drama", "Romance"],
+    "excited": ["Action", "Thriller"],
+    "bored": ["Mystery", "Sci-Fi", "Fantasy"],
+    "stressed": ["Animation", "Comedy"],
+    "relaxed": ["Romantic Comedy", "Documentary"],
+    "angry": ["Action", "Thriller", "Horror"]
+  
+  genre_to_movies = {
+    "Comedy": ["Superbad", "Step Brothers", "The Hangover"],
+    "Adventure": ["Indiana Jones", "Jumanji", "Jurassic Park"],
+    "Family": ["The Lion King", "Finding Nemo", "Toy Story"],
+    "Drama": ["The Shawshank Redemption", "Forrest Gump", "The Godfather"],
+    "Romance": ["Pride and Prejudice", "The Notebook", "La La Land"],
+    "Action": ["Mad Max: Fury Road", "Die Hard", "John Wick"],
+    "Thriller": ["Inception", "Se7en", "Fight Club"],
+    "Mystery": ["Gone Girl", "Sherlock Holmes", "The Girl with the Dragon Tattoo"],
+    "Sci-Fi": ["Blade Runner", "The Matrix", "Interstellar"],
+    "Fantasy": ["Harry Potter", "The Lord of the Rings", "Pan's Labyrinth"],
+    "Animation": ["Up", "Frozen", "Coco"],
+    "Romantic Comedy": ["Crazy Rich Asians", "10 Things I Hate About You", "When Harry Met Sally"],
+    "Documentary": ["Planet Earth", "13th", "Won't You Be My Neighbor?"],
+    "Horror": ["The Conjuring", "Get Out", "A Quiet Place"]
+}
+  def suggest_movie(emotion):
+    genres = emotion_to_genre.get(emotion.lower(), None)
+    
+    if not genres:
+        return "Sorry, I don't have suggestions for that emotion."
+    
+    genre = random.choice(genres)
+    
+    movies = genre_to_movies.get(genre, [])
+    
+    if not movies:
+        return "Sorry, I couldn't find any movies for the genre."
+    
+    movie = random.choice(movies)
+    
+    return f"Since you're feeling {emotion}, how about watching '{movie}' from the {genre} genre?"
+import random
