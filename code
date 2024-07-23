@@ -47,60 +47,6 @@ def suggest_movie(emotion):
     return f"Since you're feeling {emotion}, how about watching '{movie}' from the {genre} genre?"
 import random
 
-genre_to_movies = {
-    "Comedy": [
-        {"title": "Superbad", "description": "Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.", "year": 2007},
-        {"title": "Step Brothers", "description": "Two aimless middle-aged losers still living at home are forced against their will to become roommates when their parents marry.", "year": 2008},
-        {"title": "The Hangover", "description": "Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing.", "year": 2009}
-    ],
-    "Adventure": [
-        {"title": "Indiana Jones: Raiders of the Lost Ark", "description": "In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before the Nazis.", "year": 1981},
-        {"title": "Jumanji", "description": "Two kids find and play a magical board game, and release a man trapped for decades and a host of dangers that can only be stopped by finishing the game.", "year": 1995},
-        {"title": "Jurassic Park", "description": "A pragmatic paleontologist visiting an almost complete theme park is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.", "year": 1993}
-    ],
-    "Family": [
-        {"title": "The Lion King", "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.", "year": 1994},
-        {"title": "Finding Nemo", "description": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.", "year": 2003},
-        {"title": "Toy Story", "description": "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.", "year": 1995}
-    ],
-    "Drama": [
-        {"title": "The Shawshank Redemption", "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", "year": 1994},
-        {"title": "Forrest Gump", "description": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold from the perspective of an Alabama man with an IQ of 75.", "year": 1994},
-        {"title": "The Godfather", "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.", "year": 1972}
-    ],
-    "Romance": [
-        {"title": "Pride and Prejudice", "description": "Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class.", "year": 2005},
-        {"title": "The Notebook", "description": "A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.", "year": 2004},
-        {"title": "La La Land", "description": "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.", "year": 2016}
-    ],
-    "Action": [
-        {"title": "Mad Max: Fury Road", "description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshipper, and a drifter named Max.", "year": 2015},
-        {"title": "Die Hard", "description": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.", "year": 1988},
-        {"title": "John Wick", "description": "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.", "year": 2014}
-    ],
-    "Thriller": [
-        {"title": "Inception", "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.", "year": 2010},
-        {"title": "Se7en", "description": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.", "year": 1995},
-        {"title": "Fight Club", "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much, much more.", "year": 1999}
-    ],
-    "Mystery": [
-        {"title": "Gone Girl", "description": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.", "year": 2014},
-        {"title": "Sherlock Holmes", "description": "Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England.", "year": 2009},
-        {"title": "The Girl with the Dragon Tattoo", "description": "Journalist Mikael Blomkvist is aided in his search for a woman who has been missing for forty years by Lisbeth Salander, a young computer hacker.", "year": 2011}
-    ],
-    "Sci-Fi": [
-        {"title": "Blade Runner", "description": "A blade runner must pursue and terminate four replicants who stole a ship in space and have returned to Earth to find their creator.", "year": 1982},
-        {"title": "The Matrix", "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.", "year": 1999},
-        {"title": "Interstellar", "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.", "year": 2014}
-    ],
-    "Fantasy": [
-        {"title": "Harry Potter and the Sorcerer's Stone", "description": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family, and the terrible evil that haunts the magical world.", "year": 2001},
-        {"title": "The Lord of the Rings: The Fellowship of the Ring", "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.", "year": 2001},
-        {"title": "Pan's Labyrinth", "description": "In the Falangist Spain of 1944, the bookish young stepdaughter of a sadistic army officer escapes into an eerie but captivating fantasy world.", "year": 2006}
-    ],
-    "Animation": [
-        {"title": "Up", "description": "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.", "year": 2009}]}
-
 movies_by_mood = {
     'happy': ['The Secret Life of Walter Mitty', 'La La Land', 'Amélie', 'The Intouchables', 'Singin\' in the Rain'],
     'sad': ['The Pursuit of Happyness', 'Schindler\'s List', 'A Beautiful Mind', 'The Green Mile', 'Requiem for a Dream'],
